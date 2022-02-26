@@ -16,7 +16,7 @@
   </head>
   <div class="globalContainer">
   <body class="background">
-    <header id="logo" class="marginBottom" style="height: 87px">
+    <header id="logo" class="marginBottom">
     </header>
     <div class="displayInlineBlock" id="asideContent" style="margin-left: 25px">
       <nav id="navVinicius">
@@ -28,7 +28,11 @@
         <img width="200px" src="img/vinicius.png" alt="imgVinicius" />
       </div>
     </div>
-    <article class="displayInlineBlock positionAbsolute customWidth">
+    <article class="displayInlineBlock positionAbsolute customWidth displayMobile">
+      <section class="headerMobile">
+        <img src="./img/logo2016.png" class="imgLogo"/>
+        <div>MiniMenu</div>
+      </section>
       <div class="displayBlock">
         <main id="orangeContainer">
           <nav
@@ -53,12 +57,29 @@
           </nav>
         </main>
       </div>
+    <div id="containerCarrusel">
+
+    <div class="carrousel">
+      <div class="grande">
+          <img src="img/carrusel1.jpg"  alt="Imagen 1" class="img">
+          <img src="img/carrusel3.jpg"  alt="Imagen 2" class="img">
+      </div>
+
+      <ul class="puntos">
+          <li class="punto activo"></li>
+          <li class="punto"></li>
+      </ul>
+  </div>
+</div>
+
       <div class="scrollBar" id="scrollBar1">
         <article  id="newTable"></article>
       </div>
       <div id="showTomAndMessage1"><h2 id="emptyFilterMessage"></h2></div>
-    <div id="showTomAndMessage2"><img id="showTom" style="display: none" width="500px" src="img/Tom.png" alt="imgTom" /></div> 
+      <div id="showTomAndMessage2"><img id="showTom" style="display: none" width="500px" src="img/Tom.png" alt="imgTom" /></div>  
     </article>
+    
+
     <div id="root"></div>
     <footer></footer>
   </div>

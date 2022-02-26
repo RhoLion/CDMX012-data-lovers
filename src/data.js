@@ -73,7 +73,7 @@ export const team = () => {
       tBody.removeChild(tBody.firstChild);
   }
   // re agrega la nueva fila ordenada
-  tBody.append(...sortedRows);
+  tBody.append(...sortedRows);//clonar arrays
 
   // recuerda como estaba ordenada la columna 
   table.querySelectorAll("th").forEach(th => th.classList.remove("th-sort-asc", "th-sort-desc"));
