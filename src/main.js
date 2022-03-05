@@ -2,8 +2,6 @@ import { gender, medals, sports, team, sortTableByColumn } from './data.js';
 import athletes from './data/athletes/athletes.js';
 import generatorTable from './utils/generatorTable.js'
 
-let article = document.getElementById("newTable");
-
 // Desplegar filtro de deportes
 function showSportFilter() {
     let arraySport = sports().sort();
@@ -86,10 +84,11 @@ function clickSearch() {
 
     if (filterData.length == 0) {
         document.getElementById("scrollBar1").style.display = "none";
+        document.getElementById("tbOlimpics").style.display = "none";
         document.getElementById("containerCarrusel1").style.display = "none";
         document.getElementById("emptyFilterMessage").innerText = "No se encontró información de esta búsqueda";
         document.getElementById("showTom").style.display="block";
-        document.getElementById("tbOlimpics").style.display = "none";
+
     }
     else {
         document.getElementById("scrollBar1").style.display = "block";
@@ -109,7 +108,6 @@ function clickSearch() {
         document.getElementById("showTom").style.display="block";
         document.getElementById("tbOlimpics").style.display = "none";
     }
-
     
     document.querySelectorAll(".table-sortable th")
     .forEach(headerCell => {
@@ -130,6 +128,7 @@ function clickSearch() {
 window.clickSearch = clickSearch;
 
  function showTable() {
+    let article = document.getElementById("newTable");
      article.innerHTML = generatorTable()
  }
 

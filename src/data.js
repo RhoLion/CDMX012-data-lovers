@@ -52,17 +52,17 @@ export const team = () => {
   return eraseDuplicate4;
 }
 
-//tabla es nuestra tabla, column es la posición de la columna, y boolean 
+//Función para ordenar las columnas de la tabla
  export const sortTableByColumn = (table, column, asc = true) => {
-  const dirModifier = asc ? 1 : -1;
+  const sortCells = asc ? 1 : -1;
   const tBody = table.tBodies[0];
   const rows = Array.from(tBody.querySelectorAll("tr"));
 
   // ordenar por cada fila
-  const sortedRows = rows.sort((a, b) => {//Selector que permite seleccionar uno o mas elementos en funcion de su orden original de acuerdo con una formula
-    const aColText = a.querySelector(`td:nth-child(${ column + 1 })`).textContent.trim();
-    const bColText = b.querySelector(`td:nth-child(${ column + 1 })`).textContent.trim();
-      return aColText > bColText ? (1 * dirModifier) : (-1 * dirModifier);
+  const sortedRows = rows.sort((a, b) => {
+    const aIterateNode = a.querySelector(`td:nth-child(${ column + 1 })`).textContent.trim();
+    const bIterateNode = b.querySelector(`td:nth-child(${ column + 1 })`).textContent.trim();
+      return aIterateNode > bIterateNode ? (1 * sortCells) : (-1 * sortCells);
   });
  
   // remover la tabla existente
