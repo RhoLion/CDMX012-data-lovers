@@ -1,38 +1,38 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-  <title>Juegos Olímpicos Río 2016</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&family=Roboto:wght@100&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<div class="globalContainer">
-<body class="background">
-    <header id="logo" class="marginBottom" style="height: 87px">
-    </header>
-    <div class="displayInlineBlock" id="asideContent" style="margin-left: 25px">
-      <nav id="navVinicius">
-        <button class="displayBlock orangeBtn" id="btnGallery">GALERÍA</button>
-        <button class="displayBlock orangeBtn" id="btnHistory">HISTORIA</button>
-        <button class="displayBlock orangeBtn" id="btnDatos">DATOS CURIOSOS</button>
-      </nav>
-      <div class="marginTopPet">
-        <img width="200px" src="img/vinicius.png" alt="imgVinicius" />
+  <head>
+    <meta charset="utf-8">
+    <title>JUEGOS OLÍMPICOS RIO 2016</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+ 
+ 
+  </head>
+  <body class="background">
+    <header id=logo class="marginBottom" style="height:87px">
+      <div>
       </div>
+    </header>
+    <div class="displayInlineBlock" style="margin-left: 25px;">
+        <nav id="navVinicius">
+          <button class="displayBlock orangeBtn" id="btnGallery">GALERÍA</button>
+          <button class="displayBlock orangeBtn" id="btnHistory">HISTORIA</button>
+          <button class="displayBlock orangeBtn" id="btnDatos">DATOS CURIOSOS</button>
+        </nav>
+        <div class="marginTopPet">
+          <img width="200px"
+            src="https://i.pinimg.com/236x/28/3e/38/283e38bc8c4309678c4c650d3a363e78--olympic-mascots-olympic-games.jpg"
+            alt="imgVinicius">
+        </div>
     </div>
     <article class="displayInlineBlock positionAbsolute customWidth">
-      <section class="headerMobile">
-        <img src="./img/logo2016.png" class="imgLogo" />
-      </section>
-      <div class="displayBlock">
-        <main id="orangeContainer">
-          <nav id="navButton" class="displayInlineBlock separateFilterFromHeader" style="margin-left: 10px">
+        <div class="displayBlock">
+          <main id="orangeContainer">
+          <nav id="navButton" class="displayInlineBlock separateFilterFromHeader" style="margin-left: 10px;">
             <select class="filterBtn" id="selectSport">
-              <option selected="selected" value="" disabled class="hola">DEPORTES</option>
+              <option selected="selected" value="" disabled>DEPORTES</option>
             </select>
             <select class="filterBtn" id="selectMedal">
               <option selected="selected" value="" disabled>MEDALLAS</option>
@@ -41,35 +41,37 @@
               <option selected="selected" value="" disabled>GÉNERO</option>
             </select>
             <select class="filterBtn" id="selectTeam">
-              <option selected="selected" value="" disabled class="hola">EQUIPOS</option>
+              <option selected="selected" value="" disabled>EQUIPOS</option>
             </select>
             <button class="filterBtn" onclick="clickSearch()" id="searchBtn">Buscar</button>
           </nav>
-        </main>
-      </div>
-      <div class="containerCarrusel" id="containerCarrusel1"> 
-        <div class="previous image">
-          &#60
+          </main>
+          <!-- <div class="ImgGallery btnCategories" style="background-color: #F4F3F2;">
+            test
+          </div> -->
         </div>
-        <div class="next image">
-          &#62
-        </div>
-            <img src="img/carrusel6.jpg" alt="Imagen 1" class="imgCarrousel">
-      </div>
-      <div class="centerTable">
-        <div class="scrollBar" id="scrollBar1">
-          <article id="newTable"></article>
-        </div>
-      </div>
-      <div id="showTomAndMessage1">
-        <h2 id="emptyFilterMessage"></h2>
-      </div>
-      <div id="showTomAndMessage2"><img id="showTom" style="display: none" width="500px" src="img/Tom.png"
-          alt="imgTom" /></div>
+        <article>
+          <table  id="tbOlimpics">
+            <thead>
+              <tr>
+                <td>DISCIPLINA</td>
+                <td>MEDALLA</td>
+                <td>ATLETA</td>
+                <td>GÉNERO</td>
+                <td>EDAD</td>
+                <td>PESO</td>
+                <td>ESTATURA</td>
+              </tr>
+            </thead>
+            <tbody >
+ 
+            </tbody>
+          </table>
+        </article>
     </article>
     <div id="root"></div>
-    <footer></footer>
-<script src="main.js" type="module"></script>
-</body>
-</div>
+    <footer>
+    </footer>
+    <script src="main.js" type="module"></script>
+  </body>
 </html>
