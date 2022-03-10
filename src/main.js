@@ -13,7 +13,7 @@ function showSportFilter() {
         selectSport.appendChild(optionSport); //Metemos la opción en el select
     }
 }
-showSportFilter();
+showSportFilter() ;
 
 // Desplegar filtro de Medallas
 function showMedalsFilter() {
