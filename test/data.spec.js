@@ -30,7 +30,7 @@ describe('medals', () => {
   it('debería remover duplicados de "medals"', () => {
  
     expect(medals()).toEqual(
-      expect.arrayContaining(['Bronze', 'Silver', 'Gold' ])
+      expect.arrayContaining(['Bronzen', 'Silver', 'Gold' ])
     );
   })
 })

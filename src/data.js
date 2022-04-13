@@ -1,8 +1,5 @@
 import data from './data/athletes/athletes.js';
 
-// export const Athletes = () => {
-//   return data;
-// };
 
 // Traer set de datos de Deportes
 export const sports = () => {
@@ -60,20 +57,20 @@ export const team = () => {
 
   // ordenar por cada fila
   const sortedRows = rows.sort((a, b) => {
-    const aIterateNode = a.querySelector(`td:nth-child(${ column + 1 })`).textContent.trim();
-    const bIterateNode = b.querySelector(`td:nth-child(${ column + 1 })`).textContent.trim();
-      return aIterateNode > bIterateNode ? (1 * sortCells) : (-1 * sortCells);
+    const aElement = a.querySelector(`td:nth-child(${ column + 1 })`).textContent.trim();
+    const bElement = b.querySelector(`td:nth-child(${ column + 1 })`).textContent.trim();//hijo clickeado
+      return aElement > bElement ? (1 * sortCells) : (-1 * sortCells);
   });
  
-  // remover la tabla existente
+ 
   while (tBody.firstChild) {
       tBody.removeChild(tBody.firstChild);
   }
-  // re agrega la nueva fila ordenada
+ 
   tBody.append(...sortedRows);
 
-  // recuerda como estaba ordenada la columna 
-  table.querySelectorAll("th").forEach(th => th.classList.remove("th-sort-asc", "th-sort-desc"));
-  table.querySelector(`th:nth-child(${ column + 1})`).classList.toggle("th-sort-asc", asc);
+  
+  table.querySelectorAll("th").forEach(th => th.classList.remove("th-sort-asc", "th-sort-desc"));//borra flechas
+  table.querySelector(`th:nth-child(${ column + 1})`).classList.toggle("th-sort-asc", asc);//agrega flechita
   table.querySelector(`th:nth-child(${ column + 1})`).classList.toggle("th-sort-desc", !asc);
 }

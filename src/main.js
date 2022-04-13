@@ -115,7 +115,8 @@ function clickSearch() {
         headerCell.addEventListener("click", () => {
             const tableElement = document.getElementById("tbOlimpics");
             const headerIndex = Array.prototype.indexOf.call(headerCell.parentElement.children, headerCell);
-            const currentIsAscending = headerCell.classList.contains("th-sort-asc");//este método valida el tipo de data en la columna que se pide ordenar
+            const currentIsAscending = headerCell.classList.contains("th-sort-asc");
+            //Comprueba si la clase indicada existe en el atributo de clase del elemento
 
             sortTableByColumn(tableElement, headerIndex, !currentIsAscending);
         });
@@ -159,7 +160,7 @@ function selectWhenMobile(width){
     let allSelects = document.getElementsByTagName('select');
     if(width<844){
         for(let select of allSelects){
-            select.addEventListener('focus',()=>{select.size=4;});
+            select.addEventListener('focus',()=>{select.size=4;});//muestre 4 opciones
             select.addEventListener('blur',()=>{select.size=0;});
             select.addEventListener('change',()=>{select.size=0;select.blur();});
         }
@@ -169,22 +170,23 @@ function selectWhenMobile(width){
             select.addEventListener('blur',()=>{select.size=0;});
             select.addEventListener('change',()=>{select.size=0;select.blur();});
             
-            var old_element = select;
-            var new_element = old_element.cloneNode(true);
+            let old_element = select; //evitar error doble click por multiples cambios
+            let new_element = old_element.cloneNode(true);
             old_element.parentNode.replaceChild(new_element, old_element);
         }
     }
 }
  
-selectWhenMobile(document.documentElement.clientWidth);
+selectWhenMobile(document.documentElement.clientWidth);//ejecutar dentro del ancho de mis selects
  
 window.addEventListener("resize", function() {
 
-    window.onresize = selectWhenMobile(document.documentElement.clientWidth);
+    window.onresize = selectWhenMobile(document.documentElement.clientWidth);//anchura interior de un elemento en pixeles
 })
 
 //AQUI EMPIEZA EL CARRUSEL
-let arrayImgCarrousel = ['img/carrusel6.jpg', 'img/carrusel4.jpg', 'img/carrusel3.jpg', 'img/carrusel5.jpg', 'img/carrusel7.jpg', 'img/carrusel2.jpg', 'img/carrusel1.jpg'];
+let arrayImgCarrousel = ['img/carrusel6.jpg', 'img/carrusel4.jpg', 'img/carrusel3.jpg', 'img/carrusel5.jpg', 'img/carrusel7.jpg',
+ 'img/carrusel2.jpg', 'img/carrusel1.jpg'];
 let counter = 0;
 
 function carrousel(containerCarrusel){
@@ -192,13 +194,13 @@ function carrousel(containerCarrusel){
         let previous = containerCarrusel.querySelector('.previous');
         let next = containerCarrusel.querySelector('.next');
         let image = containerCarrusel.querySelector('img');
-        let tgt = event.target;
+        let tgt = event.target;//encontrará elemento exacto que dispara evento click(previo o next)
 
         if(tgt == previous){
             if(counter > 0){
                 image.src = arrayImgCarrousel[counter-1];
                 counter--;
-            }else{
+            }else{//asigna de manera infinita hacia atrás
                 image.src = arrayImgCarrousel[arrayImgCarrousel.length - 1];
                 counter = arrayImgCarrousel.length - 1;
             }
